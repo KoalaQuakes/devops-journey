@@ -1,0 +1,5 @@
+baseURL = 'https://koalaquakes.github.io/devops-journey/'
+languageCode = 'en-us'
+title = 'My New Hugo Project'
+theme = "PaperMod"
+
