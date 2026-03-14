@@ -1,5 +1,16 @@
 baseURL = 'https://koalaquakes.github.io/devops-journey/'
 languageCode = 'en-us'
 title = 'My New Hugo Project'
-theme = "PaperMod"
+theme = "LoveIt"
 
+[params]
+  defaultTheme = "auto"
+  dateFormat = "2006-01-02"
+
+[params.header]
+  desktopMode = "fixed"
+  mobileMode = "auto"
+
+[params.footer]
+  enable = true
+  hugo = true
