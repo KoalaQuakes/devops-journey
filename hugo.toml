@@ -1,6 +1,6 @@
 baseURL = 'https://koalaquakes.github.io/devops-journey/'
 languageCode = 'en-us'
-title = 'My New Hugo Project'
+title = 'Journey DevOps'
 theme = "LoveIt"
 
 [params]
