@@ -1,6 +1,6 @@
 baseURL = 'https://koalaquakes.github.io/devops-journey/'
 languageCode = 'en-us'
-title = 'Journey DevOps'
+title = 'DevOps Journey'
 theme = "LoveIt"
 
 [params]
@@ -14,3 +14,20 @@ theme = "LoveIt"
 [params.footer]
   enable = true
   hugo = true
+
+[params.home.profile]
+  enable = true
+  avatarURL = "images/profile.jpg"
+  title = "Shane Hart"
+  subtitle = "Cloud & DevOps Engineer | Terraform | Ansible | Go"
+  typeit = true
+
+  social = true
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/KoalaQuakes"
+
+[[params.socialIcons]]
+name = "linkedin"
+url = "https://linkedin.com/in/hart-shane"
