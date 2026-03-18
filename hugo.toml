@@ -1,7 +1,26 @@
 baseURL = 'https://koalaquakes.github.io/devops-journey/'
 languageCode = 'en-us'
-title = 'DevOps Journey'
+title = 'Shane Hart | DevOps Journey'
 theme = "LoveIt"
+
+[menu]
+
+[[menu.main]]
+identifier = "posts"
+name = "Posts"
+url = "/posts/"
+weight = 1
+
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 2
+
+[params.page.toc]
+  enable = true
+  keepStatic = false
+  auto = true
 
 [params]
   defaultTheme = "auto"
@@ -10,6 +29,8 @@ theme = "LoveIt"
 [params.header]
   desktopMode = "fixed"
   mobileMode = "auto"
+  [params.header.title]
+    name = "DevOps Journey"
 
 [params.footer]
   enable = true
@@ -24,10 +45,27 @@ theme = "LoveIt"
 
   social = true
 
-[[params.socialIcons]]
-name = "github"
-url = "https://github.com/KoalaQuakes"
+[params.page.code]
+  copy = true
 
-[[params.socialIcons]]
-name = "linkedin"
-url = "https://linkedin.com/in/hart-shane"
+# Social link icons to share on social platforms under Posts
+[params.page.share]
+  enable = false
+
+[params.social]
+GitHub = "KoalaQuakes"
+Linkedin = "hart-shane"
+
+[params.search]
+  enable = true
+  type = "lunr"
+
+[params.author]
+  name = "Shane"
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+
+[markup.goldmark.renderer]
+  unsafe = true

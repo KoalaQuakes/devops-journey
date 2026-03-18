@@ -1,0 +1,18 @@
+{{- $type := .Get "type" | default "quest" -}}
+{{- $color := "#FFD100" -}} {{- if eq $type "objective" -}}
+    {{- $color = "#FFFFFF" -}} {{- else if eq $type "reward" -}}
+    {{- $color = "#00FF00" -}} {{- end -}}
+
+<div class="wow-box" style="
+    border: 2px solid {{ $color }};
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.03);
+    font-family: 'Life Savers', cursive; /* Optional: Adds a 'WoW' font vibe */
+">
+    <div style="font-size: 1.1em; color: {{ $color }}; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">
+        <i class="fas fa-scroll fa-fw"></i> {{ .Get "title" }}
+    </div>
+    {{ .Inner }}
+</div>
