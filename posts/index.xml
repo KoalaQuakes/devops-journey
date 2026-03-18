@@ -1,1 +1,23 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>All Posts - DevOps Journey</title><link>https://koalaquakes.github.io/devops-journey/posts/</link><description>All Posts | DevOps Journey</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 16 Mar 2026 23:29:19 +0100</lastBuildDate><atom:link href="https://koalaquakes.github.io/devops-journey/posts/" rel="self" type="application/rss+xml"/><item><title>Second Post</title><link>https://koalaquakes.github.io/devops-journey/posts/second-post/</link><pubDate>Mon, 16 Mar 2026 23:29:19 +0100</pubDate><author>xxxx</author><guid>https://koalaquakes.github.io/devops-journey/posts/second-post/</guid><description>&lt;p>Minimum viable Kubernetes&lt;/p></description></item><item><title>First Post</title><link>https://koalaquakes.github.io/devops-journey/posts/first-post/</link><pubDate>Fri, 13 Mar 2026 12:11:12 +0100</pubDate><author>xxxx</author><guid>https://koalaquakes.github.io/devops-journey/posts/first-post/</guid><description>&lt;p>Welcome to the internet.&lt;/p></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>All Posts - Shane Hart | DevOps Journey</title><link>https://koalaquakes.github.io/devops-journey/posts/</link><description>All Posts | Shane Hart | DevOps Journey</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 17 Mar 2026 14:40:33 +0100</lastBuildDate><atom:link href="https://koalaquakes.github.io/devops-journey/posts/" rel="self" type="application/rss+xml"/><item><title>Ansible Starter Guide</title><link>https://koalaquakes.github.io/devops-journey/posts/my-third-post/</link><pubDate>Tue, 17 Mar 2026 14:40:33 +0100</pubDate><author>Shane</author><guid>https://koalaquakes.github.io/devops-journey/posts/my-third-post/</guid><description><![CDATA[<h2 id="introduction">Introduction</h2>
+<p>This is a beginner taster course, I’m going to use Ansible to deploy and configure a basic web server. I’ll cover the core concepts and we should understand how it works and its place in a DevOps toolbox.</p>
+<p>Pros:</p>
+<ul>
+<li>Easy to read</li>
+<li>Uses SSH rather than an Agent ()</li>
+<li>quick to deploy consistent configuration across hundreds of linux servers</li>
+</ul>
+<p>Cons:</p>
+<ul>
+<li>Limited Windows support - (can’t install directly but can with WSL2)</li>
+<li>Being procedural, can cause errors in very large (thousands) or complex infrastructure (dynamic micro servers).</li>
+</ul>
+<p>Use-cases</p>]]></description></item><item><title>Minimum Viable Kubernetes</title><link>https://koalaquakes.github.io/devops-journey/posts/second-post/</link><pubDate>Mon, 16 Mar 2026 23:29:19 +0100</pubDate><author>Shane</author><guid>https://koalaquakes.github.io/devops-journey/posts/second-post/</guid><description><![CDATA[<h2 id="introduction">Introduction</h2>
+<p>The minimum circumstances where Kubernetes becomes a logical choice usually fall into three categories: Infrastructure Complexity, Operational Scale, and Business Requirements.</p>
+<h2 id="complexity-thresholds">Complexity Thresholds</h2>
+<p>If your &ldquo;site&rdquo; is a single monolith or just two containers (App + DB), Kubernetes is almost certainly overkill.
+It starts to make sense when you have many services that need to talk to each other, manage their own secrets, and scale independently.
+The manual effort of managing them on individual virtual machines (VMs) becomes higher than the effort of running K8s.</p>]]></description></item><item><title>Your Place In The World</title><link>https://koalaquakes.github.io/devops-journey/posts/first-post/</link><pubDate>Fri, 13 Mar 2026 12:11:12 +0100</pubDate><author>Shane</author><guid>https://koalaquakes.github.io/devops-journey/posts/first-post/</guid><description><![CDATA[<h2 id="introduction">Introduction</h2>
+<p>Purpose: documenting <strong>learning, experience and investigations</strong> using this personal and technical blog.</p>
+<p>I have decided to create this using Hugo and LoveIt theme due to the impactful experience with consistent structure.
+Learning and self-development often goes overlooked and under valued - I am the worse culprit!</p>
+<p>Taking time to process and formally write up my own words both helps to cement learning and offer resources to others interested in the <em>DevOps Journey</em>.</p>]]></description></item></channel></rss>

@@ -1,0 +1,88 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title>Ansible Starter Guide - Shane Hart | DevOps Journey</title><meta name=Description content="This is my cool site"><meta property="og:url" content="https://koalaquakes.github.io/devops-journey/posts/my-third-post/"><meta property="og:site_name" content="Shane Hart | DevOps Journey"><meta property="og:title" content="Ansible Starter Guide"><meta property="og:description" content="Introduction This is a beginner taster course, I’m going to use Ansible to deploy and configure a basic web server. I’ll cover the core concepts and we should understand how it works and its place in a DevOps toolbox.
+Pros:
+Easy to read Uses SSH rather than an Agent () quick to deploy consistent configuration across hundreds of linux servers Cons:
+Limited Windows support - (can’t install directly but can with WSL2) Being procedural, can cause errors in very large (thousands) or complex infrastructure (dynamic micro servers). Use-cases"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2026-03-17T14:40:33+01:00"><meta property="article:modified_time" content="2026-03-17T14:40:33+01:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Ansible Starter Guide"><meta name=twitter:description content="Introduction This is a beginner taster course, I’m going to use Ansible to deploy and configure a basic web server. I’ll cover the core concepts and we should understand how it works and its place in a DevOps toolbox.
+Pros:
+Easy to read Uses SSH rather than an Agent () quick to deploy consistent configuration across hundreds of linux servers Cons:
+Limited Windows support - (can’t install directly but can with WSL2) Being procedural, can cause errors in very large (thousands) or complex infrastructure (dynamic micro servers). Use-cases"><meta name=application-name content="My cool site"><meta name=apple-mobile-web-app-title content="My cool site"><meta name=referrer content="no-referrer"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://koalaquakes.github.io/devops-journey/posts/my-third-post/><link rel=prev href=https://koalaquakes.github.io/devops-journey/posts/second-post/><link rel=stylesheet href=/devops-journey/css/style.min.css><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css as=style onload='this.onload=null,this.rel="stylesheet"'><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload='this.onload=null,this.rel="stylesheet"'><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Ansible Starter Guide","inLanguage":"en-us","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/koalaquakes.github.io\/devops-journey\/posts\/my-third-post\/"},"genre":"posts","wordcount":851,"url":"https:\/\/koalaquakes.github.io\/devops-journey\/posts\/my-third-post\/","datePublished":"2026-03-17T14:40:33+01:00","dateModified":"2026-03-17T14:40:33+01:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Shane"},"description":""}</script></head><body data-header-desktop=fixed data-header-mobile=auto><script>const query=window.matchMedia("(prefers-color-scheme: dark)");function applyTheme(){let e=window.localStorage?.getItem("theme")||"auto",t=e==="dark"||e==="auto"&&query.matches;document.body.setAttribute("theme",t?"dark":"light"),document.body.setAttribute("cfg-theme",e)}applyTheme(),query.addEventListener("change",applyTheme)</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/devops-journey/ title="Shane Hart | DevOps Journey">DevOps Journey</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/devops-journey/posts/>Posts </a><a class=menu-item href=/devops-journey/about/>About </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-spin" aria-hidden=true></i>
+</span></span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust" aria-hidden=true></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/devops-journey/ title="Shane Hart | DevOps Journey">DevOps Journey</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-spin" aria-hidden=true></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/devops-journey/posts/ title>Posts</a><a class=menu-item href=/devops-journey/about/ title>About</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust" aria-hidden=true></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Ansible Starter Guide</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/devops-journey/ title=Author rel=author class=author><i class="fas fa-user-circle" aria-hidden=true></i>Shane</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt" aria-hidden=true></i>&nbsp;<time datetime=2026-03-17>2026-03-17</time>&nbsp;<i class="fas fa-pencil-alt" aria-hidden=true></i>&nbsp;851 words&nbsp;
+<i class="far fa-clock" aria-hidden=true></i>&nbsp;4 minutes&nbsp;</div></div><div class="details toc" id=toc-static data-kept><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right" aria-hidden=true></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#introduction>Introduction</a></li><li><a href=#points-to-clarify>Points to Clarify</a></li><li><a href=#inventory--first-command>Inventory & First Command</a></li><li><a href=#dynamic-variables>Dynamic Variables</a></li><li><a href=#example-structure>Example Structure</a></li></ul></nav></div></div><div class=content id=content><h2 id=introduction>Introduction</h2><p>This is a beginner taster course, I’m going to use Ansible to deploy and configure a basic web server. I’ll cover the core concepts and we should understand how it works and its place in a DevOps toolbox.</p><p>Pros:</p><ul><li>Easy to read</li><li>Uses SSH rather than an Agent ()</li><li>quick to deploy consistent configuration across hundreds of linux servers</li></ul><p>Cons:</p><ul><li>Limited Windows support - (can’t install directly but can with WSL2)</li><li>Being procedural, can cause errors in very large (thousands) or complex infrastructure (dynamic micro servers).</li></ul><p>Use-cases</p><ul><li>Solving your own problems</li></ul><p>And this is worth highlighting that Ansible is a great tool to solve a difficult problem in an environment you manage. It ensures servers / virtual machines are in a desired, consistent state. If there is an app that needs a specific version or data needs to be collected in a certain flow. It automates the end-to-end process of deploying applications, including copying files, installing dependencies, and restarting services in a repeatable manner.
+Install Ansible
+First, we install Ansible on a machine. To avoid clashing configurations, I will be using a fresh Ubuntu desktop VM. These steps are possible to run on MacOS locally but Windows does not support, so Windows Subsystem for Linux is required. I won’t cover Mac and Windows here.</p><p>Ubuntu/Debian:
+sudo apt update && apt install ansible
+Then verify it with:
+ansible &ndash;version
+Seeing a version number means it is ready. This machine now becomes our control node — the place from which we define and push configuration.</p><h2 id=points-to-clarify>Points to Clarify</h2><p>Before moving further, let&rsquo;s clarify.</p><p>Agentless
+Deployed agents have their own pros and cons but without needing to deploy an agent, SSH is widely integrated into Linux distributions. SSH needs to be enabled and allowed - firewall rules can lock down SSH protocol or local ports. This approach lowers the friction to achieve the task at hand.</p><p>Declarative
+The Declarative part took me a while to conceptualise, in the YAML we write the desired state to get to and Ansible drives - we don’t bring a map with directions. This lowers the barrier to entry but does raise the barrier to master Ansible.</p><p>Versatility
+It can handle configuration management, application deployment, and infrastructure provisioning across servers, networks, and clouds. Getting network devices to pass compliance checks is a specific use-case but easily handled by Ansible.</p><p>For this guide, we’ll use localhost as our target.</p><h2 id=inventory--first-command>Inventory & First Command</h2><p>Create a workspace:
+mkdir ansible-start
+cd ansible-start</p><p>Create an inventory file:
+nano inventory.ini</p><p>Set the target as the local host:
+[local]
+localhost ansible_connection=local</p><p>Test it:
+ansible all -i inventory.ini -m ping</p><p>Which should return:
+&ldquo;ping&rdquo;: &ldquo;pong&rdquo;</p><p>This confirms Ansible can communicate with our defined host. Local host in this case but it is the fist hurdle.</p><p>Now a useful diagnoses command:
+ansible all -i inventory.ini -m command -a &ldquo;uptime&rdquo;</p><p>Hurray, this proves we can query the target and can move on to more.</p><p>##First Playbook</p><p>Create a playbook:
+nano install_nginx.yml
+YAML is indentation (spaces) dependent, always indent by factor of two spaces for new lines.
+Paste or type in:</p><hr><ul><li><p>name: Install and start Nginx
+hosts: local
+become: yes</p><p>tasks:</p><ul><li><p>name: Install Nginx
+apt:
+name: nginx
+state: present
+update_cache: yes</p></li><li><p>name: Ensure Nginx is running
+service:
+name: nginx
+state: started
+enabled: yes</p></li></ul></li></ul><p>To run it (make sure you’re in the correct directory):
+ansible-playbook -i inventory.ini install_nginx.yml</p><p>What happened? Ansible gets Nginx installed, started, and enabled. If we run it again, nothing should change.</p><p>If you can’t view the target host default Nginx webpage, we can pull it with:
+curl http://localhost</p><p>Terminal should output the default Nginx page.</p><h2 id=dynamic-variables>Dynamic Variables</h2><p>To improve the playbook, replace hardcoded values with variables.
+Create another playbook:
+nano install_webserver.yml</p><p>Paste in:</p><hr><ul><li><p>name: Install web server
+hosts: local
+become: yes
+vars:
+package_name: nginx</p><p>tasks:</p><ul><li>name: Install package
+apt:
+name: &ldquo;{{ package_name }}&rdquo;
+state: present
+update_cache: yes</li></ul></li></ul><p>By introducing package_name, it becomes reusable. If we want apache2, the same structure installs a different server.</p><p>Variables are stated in the vars section and referenced using the double quotes, double curly braces, space name, variable name {{ var-name }}. Which is to align with the same convention from Jinja2 (j2 files).</p><p>Templates (the Real value)
+Let’s customize the homepage.</p><p>Create a templates directory:
+mkdir templates
+nano templates/index.html.j2</p><p>Paste in:</p><h1>Hello {{ ansible_hostname }}</h1><p>Deployed using Ansible.</p><p>Now update the playbook:</p><hr><ul><li><p>name: Install web server
+hosts: local
+become: yes
+vars:
+package_name: nginx</p><p>tasks:</p><ul><li><p>name: Install package
+apt:
+name: &ldquo;{{ package_name }}&rdquo;
+state: present
+update_cache: yes</p></li><li><p>name: Deploy custom index page
+template:
+src: templates/index.html.j2
+dest: /var/www/html/index.html</p></li><li><p>name: Ensure web server is running
+service:
+name: &ldquo;{{ package_name }}&rdquo;
+state: restarted
+enabled: yes</p></li></ul></li></ul><p>Run:
+ansible-playbook -i inventory.ini install_webserver.yml</p><p>When we refresh the browser, the page is generated using the template variable. This is touching on the real value.</p><p>If needed, pull it with:
+curl http://localhost</p><h2 id=example-structure>Example Structure</h2><p>A realistic layout looks like:</p><p>ansible-start/
+│
+├── inventory.ini
+├── site.yml
+├── roles/
+│ └── web/
+│ ├── tasks/main.yml
+│ ├── templates/
+│ └── handlers/</p><p>(tree -L 3)</p><p>From here, a next step is to target remote VMs over SSH and manage multiple hosts.</p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2026-03-17</span></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/devops-journey/>Home</a></span></section></div><div class=post-nav><a href=/devops-journey/posts/second-post/ class=prev rel=prev title="Minimum Viable Kubernetes"><i class="fas fa-angle-left" aria-hidden=true></i>Minimum Viable Kubernetes</a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.158.0">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 1.0.0"><i class="far fa-kiss-wink-heart" aria-hidden=true></i> LoveIt</a></div><div class=footer-line itemscope itemtype=http://schema.org/CreativeWork><i class="far fa-copyright" aria-hidden=true></i><span itemprop=copyrightYear>2022 - 2026</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/devops-journey/ target=_blank>Shane</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up" aria-hidden=true></i></a></div><div id=fixed-buttons-hidden><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment" aria-hidden=true></i></a></div><script src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js></script><script src=https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js></script><script src=https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js></script><script src=https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js></script><script>window.config={comment:{},search:{highlightTag:"em",maxResultLength:10,noResultsFound:"No results found",snippetLength:30}}</script><script src=/devops-journey/js/theme.js></script></body></html>
