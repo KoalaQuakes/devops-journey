@@ -40,7 +40,7 @@ weight = 2
   enable = true
   avatarURL = "images/profile.jpg"
   title = "Shane Hart"
-  subtitle = "Cloud & DevOps Engineer | Terraform | Ansible | Go"
+  subtitle = "Cloud, DevOps & Cyber Security"
   typeit = true
 
   social = true
