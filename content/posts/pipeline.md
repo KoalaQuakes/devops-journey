@@ -1,27 +1,33 @@
 +++
 date = '2026-08-19T15:45:06+02:00'
-draft = true
+draft = false
 title = 'Pipeline'
 +++
 
 **CI/CD Pipeline**
 
-#1 What is a pipeline
-Continous Integration and Continous Delivery is two halfs of the pipeline. But a pipline is an oversimplified analyogy as there is not a single source or destination.
-A more realistic analogy is a global manufactoring process to deliver a product to customers. In an example of building a car.
-Developers would create their parts, put them in a box and send them to a central factory manufacturing line. There the packages would need to be received on-time and tested for qualatity and specification.
-This first half is the CI pipes and developers will commit code to a central repository which triggers automated and predefined tests.
+## What is a pipeline
+Continuous Integration and Continuous Delivery (CI/CD) are two halves of the software delivery process. However, referring to this process as a "pipeline" is an oversimplification, as there is rarely a single source or a fixed end point.
 
-The second half of the analogy is the car needs to be assembled, tested and shipped out to customers. Not a single car but many of the same model of car, each with various differences of customisations.
-This relates to the Continous Delivery and is much higher stakes than CI if the product is not up to scratch, the customer will not be happy.
-Continous Delivery alagamates the code commits into acceptable versions, the frequency is set by the appitied of the business, and this (small) version change is then deployed through various strategies.     
+A more accurate comparison is global automotive manufacturing. Developers act as part suppliers, shipping individual components to a central facility where incoming packages are checked against quality and build specifications. This represents Continuous Integration (CI): developers commit code to a shared repository, which automatically triggers a battery of testing suites.
+
+The second stage involves assembling, testing, and shipping the finished vehicles to customers at scale, accounting for various model customizations. This corresponds to Continuous Delivery (CD). The stakes are considerably higher here, as defects directly impact the end user. Continuous Delivery aggregates verified code into stable release candidates, which are then deployed via structured rollout strategies based on the organization's risk tolerance.
 
 
+## The problem CI/CD solves
+First, Continuous Integration (CI) provides a structured framework for tracking changes and aligning individual development progress toward a unified goal. It also reduces operational toil by automating repetitive, essential quality checks and compliance standards.
 
-#2 The problem it solves
-Firstly CI helps with tracking changes and logically adding individual progress towards the same goal. As well as reducing the toil of simple but important repeatative checks and standards of the works.
-The second problem it solves is to move away from big impact changes going wrong or at the very least causing a great deal of stress!
+Second, Continuous Delivery (CD) eliminates the risks and high stress associated with large, infrequent deployments. It fundamentally transforms deployment cadence by replacing fire-fighting and reactive outage recovery with a predictable workflow. While the operational stakes remain high, CD normalizes release procedures throughout each sprint cycle.
 
-#3 Relevant Tools
+**Key Operational Considerations**
 
-#4 My Pipeline example  
+Implementing CI/CD represents a significant operational shift that comes with distinct challenges—most notably, requiring total organizational commitment. To maintain pipeline integrity, all changes and emergency fixes must strictly adhere to the continuous integration process rather than bypassing it via ad-hoc adjustments.
+
+
+## Relevant Tools
+CI: Git / GitHub, Prettier, GitHub Code Scanning, Docker
+CD/Observability: ArgoCD, OpenTelemetry, Grafana
+
+
+## My Pipeline example
+https://github.com/KoalaQuakes/ci-cd-pipe
