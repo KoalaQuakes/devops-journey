@@ -23,7 +23,7 @@ weight = 2
   auto = true
 
 [params]
-  defaultTheme = "auto"
+  defaultTheme = "light"
   dateFormat = "2006-01-02"
 
 [params.header]
