@@ -4,15 +4,19 @@ draft = false
 title = 'Go Lang'
 +++
 
+# Go in Comparison
 Python is a great starting point for general programming and scripts. But when automation needs reliably across nodes, containers, or CI/CD pipelines, its additional layers slows it down. That is why infrastructure, Kubernetes, Docker, and Terraform are built in Go.
 
+Bash shell scripting is a closely aligned to Go, in terms of its benefit and purpose. I believe Go is quicker to pickup and start using. However, more understanding is required to distinguish the differences.
+
+
 # Go Wins
-Go compiles into a single static binary. 
-You copy one file to a target node, and it runs—no package managers, no runtime dependencies, and container images under 10MB using distroless setups.
+Go compiles into a single binary. 
+Copy one file to a target, it runs -> no package managers, no runtime dependencies, and very small (>10MB)container images.
 
-Go handles parallel execution with goroutines—lightweight threads (~2 KB RAM each) managed by the runtime. You can fan out thousands of concurrent network tasks without complex event loops or heavy memory overhead.
+Go handles parallel execution with goroutines. Lightweight threads (~2 KB RAM) managed by the runtime. Thousands of concurrent network tasks without heavy memory usage.
 
-Compiled Go binaries boot instantly with low memory footprints, making them ideal for system daemons, CLI tools, and automated pipelines.
+Compiled Go binaries boot instantly with low memory requirement, great for system daemons, CLI tools, and automated CI/CD pipelines.
 
 
 # **Go learning resources**
@@ -28,4 +32,5 @@ Go by Example (https://gobyexample.com/): Best for quick-reference. Short, execu
 # Go Exceptions
 Working through Go, I would not want this to be the first language I learn. The very basics make sense such as the basic operators and keywords and procedural programming. 
 Firstly, the acronyms create additional layers of complexity 
-Secondly there are nil pointers, which are a strength, but will creates is own problems if implemented incorrectly.
+
+Secondly there are nil pointers, which are a strength, but will creates problems if implemented incorrectly.
