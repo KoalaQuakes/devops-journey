@@ -1,7 +1,7 @@
 +++
 date = '2026-03-13T12:11:12+01:00'
 draft = false
-title = 'Your Place In The World'
+title = 'Hello World'
 +++
 
 ## Introduction

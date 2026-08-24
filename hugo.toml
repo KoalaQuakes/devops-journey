@@ -1,6 +1,6 @@
 baseURL = 'https://koalaquakes.github.io/devops-journey/'
 languageCode = 'en-us'
-title = 'Shane Hart | DevOps Journey'
+title = 'Shane Hart Solutions'
 theme = "LoveIt"
 
 [menu]
@@ -30,7 +30,7 @@ weight = 2
   desktopMode = "fixed"
   mobileMode = "auto"
   [params.header.title]
-    name = "DevOps Journey"
+    name = "Shane Hart Solutions"
 
 [params.footer]
   enable = true

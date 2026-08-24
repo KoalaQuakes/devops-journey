@@ -1,5 +1,5 @@
 +++
-date = '2026-03-16T23:29:19+01:00'
+date = '2026-03-24T23:29:19+01:00'
 draft = false
 title = 'Minimum Viable Kubernetes'
 +++
