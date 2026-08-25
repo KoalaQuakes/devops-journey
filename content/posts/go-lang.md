@@ -4,13 +4,13 @@ draft = false
 title = 'Go, Where and Why'
 +++
 
-# Go in Comparison
+## Go in Comparison
 Python is a great starting point for general programming and scripts. But when automation needs reliably across nodes, containers, or CI/CD pipelines, its additional layers slows it down. That is why infrastructure, Kubernetes, Docker, and Terraform are built in Go.
 
 Bash shell scripting is a closely aligned to Go, in terms of its benefit and purpose. I believe Go is quicker to pickup and start using. However, more understanding is required to distinguish the differences.
 
 
-# Go Wins
+## Go Wins
 Go compiles into a single binary. 
 Copy one file to a target, it runs -> no package managers, no runtime dependencies, and very small (>10MB)container images.
 
@@ -19,7 +19,7 @@ Go handles parallel execution with goroutines. Lightweight threads (~2 KB RAM) m
 Compiled Go binaries boot instantly with low memory requirement, great for system daemons, CLI tools, and automated CI/CD pipelines.
 
 
-# **Go learning resources**
+## **Go learning resources**
 
 Learning Go by Jon Bodner - For engineers coming from Python or Java to learn how Gophers write clean code.
 
@@ -29,7 +29,7 @@ The Go Programming Language by Donovan & Kernighan (Go lang creators) - "Go Bibl
 
 Go by Example (https://gobyexample.com/): Best for quick-reference. Short, executable code snippets side-by-side with  explanations.
 
-# Go Exceptions
+## Go Exceptions
 Working through Go, I would not want this to be the first language I learn. The very basics make sense such as the basic operators and keywords and procedural programming. 
 Firstly, the acronyms create additional layers of complexity 
 
