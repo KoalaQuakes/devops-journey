@@ -1,4 +1,4 @@
-baseURL = 'https://shanehart.solutions/'
+baseURL = 'https://shanehart.solutions'
 languageCode = 'en-us'
 title = 'Shane Hart Solutions'
 theme = "LoveIt"
