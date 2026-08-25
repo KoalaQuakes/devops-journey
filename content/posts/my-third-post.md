@@ -1,7 +1,7 @@
 +++
 date = '2026-04-13T14:40:33+01:00'
 draft = false
-title = 'Ansible Starter Guide'
+title = 'Ansible - Configuration Management'
 +++
 
 ## Introduction

@@ -1,10 +1,10 @@
 +++
 date = '2026-07-14T15:45:06+02:00'
 draft = false
-title = 'Pipeline'
+title = 'CI/CD Pipelines'
 +++
 
-**CI/CD Pipeline**
+**Beyond the "Pipeline" Metaphor**
 
 ## What is a pipeline
 Continuous Integration and Continuous Delivery (CI/CD) are two halves of the software delivery process. However, referring to this process as a "pipeline" is an oversimplification, as there is rarely a single source or a fixed end point.

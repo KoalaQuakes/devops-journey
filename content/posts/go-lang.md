@@ -1,7 +1,7 @@
 +++
 date = '2026-06-25T21:34:33+01:00'
 draft = false
-title = 'Go Lang'
+title = 'Go, Where and Why'
 +++
 
 # Go in Comparison
