@@ -38,7 +38,7 @@ weight = 2
 
 [params.home.profile]
   enable = true
-  avatarURL = "/images/profile.webp"
+  avatarURL = "/images/output.webp"
   title = "Shane Hart - that's me ⇖"
   subtitle = "Cloud, DevOps & Cyber Security"
   typeit = true
