@@ -69,3 +69,9 @@ Linkedin = "hart-shane"
 
 [markup.goldmark.renderer]
   unsafe = true
+
+[imaging]
+  bgColor = "#ffffff"
+  hint = "photo"
+  quality = 100
+  resampleFilter = "box"
