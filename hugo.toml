@@ -1,4 +1,4 @@
-baseURL = 'https://shanehart.solutions'
+baseURL = 'https://shanehart.solutions/'
 languageCode = 'en-us'
 title = 'Shane Hart Solutions'
 theme = "LoveIt"
@@ -38,7 +38,7 @@ weight = 2
 
 [params.home.profile]
   enable = true
-  avatarURL = "images/profile.jpg"
+  avatarURL = "/images/profile.jpg"
   title = "Shane Hart - that's me ⇖"
   subtitle = "Cloud, DevOps & Cyber Security"
   typeit = true
