@@ -5,7 +5,6 @@ title = 'Minimum Viable Kubernetes'
 +++
 
 ## Introduction 
-
 The minimum circumstances where Kubernetes becomes a logical choice usually fall into three categories: Infrastructure Complexity, Operational Scale, and Business Requirements.
 
 

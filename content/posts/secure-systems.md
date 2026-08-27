@@ -53,5 +53,3 @@ Working environment, end-user computer, testing and development environments. Cl
 
 8. 
 Finally, the actual work being produced needs to be completed in a secure manner. Some basics include Secret Management good practise, Secret Manager apps to store credentials, reviewed and approved 3rd party libraries, secure and approved applications and SaaS.
-
-hmm.
